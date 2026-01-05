@@ -121,6 +121,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="hover:text-pink-500 transition">Home</a>
                 <a href="#features" class="hover:text-pink-500 transition">Features</a>
+                <a href="#services" class="hover:text-pink-500 transition">Services</a>
                 <a href="#about" class="hover:text-pink-500 transition">About</a>
                 <a href="#contact" class="hover:text-pink-500 transition">Contact</a>
             </div>
@@ -130,6 +131,7 @@
             <div class="flex flex-col space-y-6 text-center">
                 <a href="#home" class="text-lg hover:text-pink-500 transition">Home</a>
                 <a href="#features" class="text-lg hover:text-pink-500 transition">Features</a>
+                <a href="#services" class="text-lg hover:text-pink-500 transition">Services</a>
                 <a href="#about" class="text-lg hover:text-pink-500 transition">About</a>
                 <a href="#contact" class="text-lg hover:text-pink-500 transition">Contact</a>
             </div>
@@ -141,7 +143,7 @@
         <canvas id="particles"></canvas>
         <div class="hero-content container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-pulse">Your AI Agent, Your Way</h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Unleash the power of AI with AIgentix – craft personalized, intelligent agents that elevate your brand in minutes.</p>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Unleash the power of AI with AIgentix – craft personalized, intelligent agents that elevate your brand and business in minutes.</p>
             <a href="#contact" class="cta-button text-white px-10 py-4 rounded-full font-semibold text-lg">Build Now</a>
         </div>
     </header>
@@ -170,13 +172,55 @@
         </div>
     </section>
 
+    <!-- New Services Section -->
+    <section id="services" class="py-24 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 fade-in">Industry-Specific AI Agent Services</h2>
+            <p class="text-xl text-center mb-20 max-w-4xl mx-auto text-gray-300 fade-in">AIgentix empowers businesses across industries with tailored AI agents. Build custom agents for healthcare, manufacturing, and more – all on our no-code platform.</p>
+
+            <!-- Healthcare -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 items-center fade-in">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-pink-500">Healthcare</h3>
+                    <p class="text-gray-300 mb-6 text-lg">Create AI agents that revolutionize patient care and operations:</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-3">
+                        <li>Virtual assistants for appointment scheduling and reminders</li>
+                        <li>Diagnostic support and personalized treatment recommendations</li>
+                        <li>Patient monitoring and real-time staff coordination</li>
+                        <li>Administrative automation for insurance verification and triage</li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://img.freepik.com/premium-photo/ai-robot-doctor-talking-with-patient-realistic_979520-21324.jpg" alt="AI robot doctor consulting a patient" class="rounded-2xl shadow-xl max-w-full h-auto">
+                </div>
+            </div>
+
+            <!-- Manufacturing -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                <div class="md:order-2">
+                    <h3 class="text-3xl font-bold mb-6 text-pink-500">Manufacturing</h3>
+                    <p class="text-gray-300 mb-6 text-lg">Deploy AI agents to optimize production and Industry 4.0 workflows:</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-3">
+                        <li>Predictive maintenance and equipment monitoring</li>
+                        <li>Supply chain optimization and inventory management</li>
+                        <li>Quality control with real-time defect detection</li>
+                        <li>Production scheduling and process automation</li>
+                    </ul>
+                </div>
+                <div class="md:order-1 flex justify-center">
+                    <img src="https://amfg.ai/wp-content/uploads/2018/08/Industry-4.0-and-Manufacturing-Processes-e1533908951467-1024x552.jpg" alt="Smart factory with AI robots in Industry 4.0 manufacturing" class="rounded-2xl shadow-xl max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-24 parallax">
         <div class="container mx-auto px-4 relative">
             <h2 class="text-4xl font-bold text-center mb-16 fade-in">About AIgentix</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2 fade-in">
-                    <img src="https://via.placeholder.com/600x400" alt="AI Agent" class="rounded-2xl shadow-xl w-full">
+                    <img src="https://sendbird.imgix.net/cms/Evaluate-and-refine-your-AI-agents-to-perfection-1_2025-11-15-214625_baxw.png?auto=format&fm=webp&lossless=1&fit=crop" alt="AI Agent Platform Dashboard" class="rounded-2xl shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2 fade-in">
                     <p class="text-gray-200 mb-6 text-lg">AIgentix is your gateway to the future of intelligent automation. Our platform empowers everyone—from startups to creators—to build AI agents that are smart, scalable, and uniquely yours.</p>
@@ -204,7 +248,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 AIgentix. All rights reserved.</p>
+            <p>&copy; 2026 AIgentix. All rights reserved.</p>
             <div class="mt-6 space-x-8">
                 <a href="#" class="hover:text-pink-500 transition">Privacy Policy</a>
                 <a href="#" class="hover:text-pink-500 transition">Terms of Service</a>
@@ -213,17 +257,15 @@
         </div>
     </footer>
 
-    <!-- Particle Animation, Scroll Animations, and Mobile Navbar Toggle -->
+    <!-- Scripts -->
     <script>
-        // Particle Animation
+        // Particle Animation (unchanged)
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
         const particlesArray = [];
         const numberOfParticles = 100;
-
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -246,13 +288,11 @@
                 ctx.fill();
             }
         }
-
         function init() {
             for (let i = 0; i < numberOfParticles; i++) {
                 particlesArray.push(new Particle());
             }
         }
-
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
@@ -266,10 +306,8 @@
             }
             requestAnimationFrame(animate);
         }
-
         init();
         animate();
-
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -284,19 +322,16 @@
                 }
             });
         }, { threshold: 0.2 });
-
         fadeIns.forEach(element => observer.observe(element));
 
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.querySelector('.mobile-menu');
-
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('open');
         });
-
         // Close mobile menu when a link is clicked
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
