@@ -16,7 +16,7 @@
             background: linear-gradient(135deg, #4f46e5, #ec4899);
             position: relative;
             overflow: hidden;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
         }
@@ -41,11 +41,12 @@
             z-index: 10;
         }
         .nav-sticky {
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 50;
             backdrop-filter: blur(12px);
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.9);
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .feature-card {
@@ -121,17 +122,17 @@
         }
     </style>
 </head>
-<body>
+<body class="pt-20"> <!-- Padding for fixed nav -->
     <!-- Navigation -->
-    <nav class="nav-sticky py-5">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">AIgentix</h1>
-            <div class="md:hidden hamburger cursor-pointer">
+    <nav class="nav-sticky py-4">
+        <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <h1 class="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">AIgentix</h1>
+            <div class="md:hidden hamburger cursor-pointer z-50">
                 <div class="bar1 w-8 h-1 bg-white mb-1.5"></div>
                 <div class="bar2 w-8 h-1 bg-white mb-1.5"></div>
                 <div class="bar3 w-8 h-1 bg-white"></div>
             </div>
-            <div class="hidden md:flex space-x-10 text-lg">
+            <div class="hidden md:flex space-x-6 lg:space-x-10 text-lg">
                 <a href="#home" class="hover:text-pink-400 transition">Home</a>
                 <a href="#features" class="hover:text-pink-400 transition">Features</a>
                 <a href="#services" class="hover:text-pink-400 transition">Services</a>
@@ -139,8 +140,8 @@
                 <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
             </div>
         </div>
-        <div class="mobile-menu hidden md:hidden fixed top-0 right-0 h-full w-72 bg-slate-900/95 backdrop-blur-lg p-8 z-50">
-            <div class="flex flex-col space-y-8 text-xl text-center mt-20">
+        <div class="mobile-menu hidden md:hidden fixed top-0 right-0 h-full w-full bg-slate-900/98 backdrop-blur-lg z-40">
+            <div class="flex flex-col space-y-8 text-2xl text-center mt-32">
                 <a href="#home" class="hover:text-pink-400 transition">Home</a>
                 <a href="#features" class="hover:text-pink-400 transition">Features</a>
                 <a href="#services" class="hover:text-pink-400 transition">Services</a>
@@ -153,119 +154,166 @@
     <!-- Hero Section -->
     <header id="home" class="hero-bg">
         <canvas id="particles"></canvas>
-        <div class="hero-content container mx-auto px-6 text-center">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-tight">
+        <div class="hero-content container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-400">Build Your Ultimate</span><br>
                 <span class="text-white">AI Agent Today</span>
             </h1>
-            <p class="text-2xl md:text-3xl mb-12 max-w-4xl mx-auto text-gray-200">Craft powerful, personalized AI agents with no-code ease. Elevate healthcare, manufacturing, and your business to the future.</p>
-            <a href="#contact" class="cta-button inline-block text-white px-12 py-5 rounded-full font-bold text-xl shadow-2xl">Start Building Free</a>
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-10 sm:mb-12 max-w-4xl mx-auto text-gray-200">Craft powerful, personalized AI agents with voice, text generation, and no-code ease.</p>
+            <a href="#contact" class="cta-button inline-block text-white px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl">Start Building Free</a>
         </div>
     </header>
 
     <!-- Features Section -->
-    <section id="features" class="py-32 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-bold text-center mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Core Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="feature-card p-10 text-center fade-in">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                    <h3 class="text-3xl font-semibold mb-4">No-Code Builder</h3>
-                    <p class="text-gray-300 text-lg">Intuitive drag-and-drop interface to customize every aspect of your AI agent.</p>
+    <section id="features" class="py-20 sm:py-28 lg:py-32 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 sm:mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Core Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <div class="feature-card p-8 sm:p-10 text-center fade-in">
+                    <svg class="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-4">No-Code Builder</h3>
+                    <p class="text-gray-300 text-base sm:text-lg">Intuitive drag-and-drop to customize every aspect.</p>
                 </div>
-                <div class="feature-card p-10 text-center fade-in">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
-                    <h3 class="text-3xl font-semibold mb-4">Advanced AI Engine</h3>
-                    <p class="text-gray-300 text-lg">Cutting-edge models that learn and adapt with every interaction.</p>
+                <div class="feature-card p-8 sm:p-10 text-center fade-in">
+                    <svg class="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-4">Text & Voice Generation</h3>
+                    <p class="text-gray-300 text-base sm:text-lg">Natural text-to-speech and voice interaction for lifelike agents.</p>
                 </div>
-                <div class="feature-card p-10 text-center fade-in">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    <h3 class="text-3xl font-semibold mb-4">Dedicated Support</h3>
-                    <p class="text-gray-300 text-lg">24/7 expert guidance to make your AI agent perfect.</p>
+                <div class="feature-card p-8 sm:p-10 text-center fade-in">
+                    <svg class="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <h3 class="text-2xl sm:text-3xl font-semibold mb-4">Dedicated Support</h3>
+                    <p class="text-gray-300 text-base sm:text-lg">24/7 guidance to perfect your AI agent.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-32 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-bold text-center mb-10 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Industry Solutions</h2>
-            <p class="text-2xl text-center mb-24 max-w-5xl mx-auto text-gray-300 fade-in">Tailored AI agents transforming key industries</p>
+    <section id="services" class="py-20 sm:py-28 lg:py-32 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-10 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Industry Solutions</h2>
+            <p class="text-lg sm:text-xl lg:text-2xl text-center mb-20 sm:mb-24 max-w-5xl mx-auto text-gray-300 fade-in">Tailored AI agents with voice & text generation transforming industries</p>
 
             <!-- Healthcare -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center service-card fade-in">
-                <div class="p-12">
-                    <h3 class="text-4xl font-bold mb-8 text-pink-400">Healthcare Revolution</h3>
-                    <p class="text-xl text-gray-300 mb-8">Empower patient care with intelligent virtual assistants and automation.</p>
-                    <ul class="space-y-4 text-lg text-gray-300">
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Appointment scheduling & reminders</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Personalized diagnostic support</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Real-time patient monitoring</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Administrative workflow automation</li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="https://cdn.outrank.so/1abf8233-06e3-428a-a230-1c79aa4f844f/1496fa03-58f4-4643-8653-123558fda5ce.jpg" alt="Futuristic AI healthcare assistant" class="rounded-2xl shadow-2xl w-full">
+            <div class="service-card mb-20 sm:mb-32 fade-in">
+                <div class="p-8 sm:p-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        <div>
+                            <h3 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-pink-400">Healthcare Revolution</h3>
+                            <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">Voice-enabled agents for patient interaction and care.</p>
+                            <ul class="space-y-4 text-base sm:text-lg text-gray-300">
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Voice appointment scheduling</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Natural TTS diagnostic explanations</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Real-time voice monitoring</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Multilingual patient support</li>
+                            </ul>
+                        </div>
+                        <div class="order-first lg:order-last">
+
+<grok-card data-id="d366ca" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Manufacturing -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center service-card fade-in">
-                <div class="md:order-2 p-12">
-                    <h3 class="text-4xl font-bold mb-8 text-pink-400">Smart Manufacturing</h3>
-                    <p class="text-xl text-gray-300 mb-8">Optimize Industry 4.0 with predictive and automated AI agents.</p>
-                    <ul class="space-y-4 text-lg text-gray-300">
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Predictive equipment maintenance</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Supply chain & inventory optimization</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Real-time quality control</li>
-                        <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Automated production scheduling</li>
-                    </ul>
+            <div class="service-card mb-20 sm:mb-32 fade-in">
+                <div class="p-8 sm:p-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        <div class="lg:order-2">
+                            <h3 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-pink-400">Smart Manufacturing</h3>
+                            <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">Voice-command agents for factory floor efficiency.</p>
+                            <ul class="space-y-4 text-base sm:text-lg text-gray-300">
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Voice-controlled equipment</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Real-time voice alerts</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Predictive maintenance reports via TTS</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Hands-free workflow guidance</li>
+                            </ul>
+                        </div>
+                        <div class="lg:order-1">
+
+<grok-card data-id="184c08" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="md:order-1">
-                    <img src="https://www.heatsign.com/wp-content/uploads/2025/03/the-future-of-industrial-automation-robotics-and-smart-manufacturing1-1024x585.jpg" alt="Industry 4.0 smart factory with AI robots" class="rounded-2xl shadow-2xl w-full">
+            </div>
+
+            <!-- Voice & Text Generation Service -->
+            <div class="service-card fade-in">
+                <div class="p-8 sm:p-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        <div>
+                            <h3 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-pink-400">Advanced Voice & Text Generation</h3>
+                            <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">Give your AI agent a natural, human-like voice.</p>
+                            <ul class="space-y-4 text-base sm:text-lg text-gray-300">
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Lifelike text-to-speech in 100+ languages</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Custom voice cloning</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Real-time voice interaction</li>
+                                <li class="flex items-start"><span class="text-pink-500 mr-3">•</span> Mobile-optimized voice apps</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+
+<grok-card data-id="b4471c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="f56610" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="15fedc" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="307c3c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 parallax">
-        <div class="container mx-auto px-6 relative">
-            <h2 class="text-5xl font-bold text-center mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About AIgentix</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="fade-in">
+    <section id="about" class="py-20 sm:py-28 lg:py-32 parallax">
+        <div class="container mx-auto px-4 sm:px-6 relative">
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 sm:mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About AIgentix</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="fade-in order-last md:order-first">
                     <img src="https://www.datocms-assets.com/16499/1734278451-thumb-ai-ui-generators.png?auto=format&dpr=0.47&w=3414" alt="Modern no-code AI platform dashboard" class="rounded-2xl shadow-2xl w-full">
                 </div>
-                <div class="fade-in text-xl text-gray-200 space-y-6">
-                    <p>AIgentix is the leading no-code platform for creating intelligent, scalable AI agents. From startups to enterprises, we make advanced AI accessible to everyone.</p>
-                    <p>Our mission is to democratize AI technology, enabling innovation across industries with beautiful, high-performance agents that evolve and grow with your needs.</p>
-                    <p>Join thousands who are already transforming their businesses with AIgentix.</p>
+                <div class="fade-in text-lg sm:text-xl text-gray-200 space-y-6">
+                    <p>AIgentix is the leading no-code platform for creating intelligent, voice-enabled AI agents.</p>
+                    <p>We make advanced AI with natural voice interaction accessible to everyone — from startups to enterprises.</p>
+                    <p>Join thousands transforming their business with lifelike AI agents.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-bold text-center mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Get Started Today</h2>
-            <div class="max-w-2xl mx-auto bg-gradient-to-br from-gray-800 to-gray-700 p-12 rounded-3xl shadow-2xl fade-in">
-                <div class="space-y-8">
-                    <input type="text" placeholder="Your Name" class="w-full p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-lg">
-                    <input type="email" placeholder="Your Email" class="w-full p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-lg">
-                    <textarea placeholder="Tell us about your project" rows="6" class="w-full p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-lg"></textarea>
-                    <button class="w-full cta-button text-white py-5 rounded-xl font-bold text-xl">Launch My AI Agent</button>
+    <section id="contact" class="py-20 sm:py-28 lg:py-32 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 sm:mb-20 fade-in text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Get Started Today</h2>
+            <div class="max-w-2xl mx-auto bg-gradient-to-br from-gray-800 to-gray-700 p-8 sm:p-12 rounded-3xl shadow-2xl fade-in">
+                <div class="space-y-6 sm:space-y-8">
+                    <input type="text" placeholder="Your Name" class="w-full p-4 sm:p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-base sm:text-lg">
+                    <input type="email" placeholder="Your Email" class="w-full p-4 sm:p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-base sm:text-lg">
+                    <textarea placeholder="Tell us about your project" rows="6" class="w-full p-4 sm:p-5 bg-gray-800/70 border border-gray-600 rounded-xl focus:outline-none focus:ring-4 focus:ring-pink-500 text-white text-base sm:text-lg"></textarea>
+                    <button class="w-full cta-button text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl">Launch My AI Agent</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-gray-400 py-16 border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-lg">&copy; 2026 AIgentix. Pioneering the future of AI agents.</p>
-            <div class="mt-8 space-x-10 text-lg">
+    <footer class="bg-gray-950 text-gray-400 py-12 sm:py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p class="text-base sm:text-lg">&copy; 2026 AIgentix. Pioneering voice-enabled AI agents.</p>
+            <div class="mt-6 sm:mt-8 space-x-6 sm:space-x-10 text-base sm:text-lg">
                 <a href="#" class="hover:text-pink-400 transition">Privacy</a>
                 <a href="#" class="hover:text-pink-400 transition">Terms</a>
                 <a href="#" class="hover:text-pink-400 transition">Support</a>
@@ -275,13 +323,13 @@
 
     <!-- Scripts -->
     <script>
-        // Enhanced Particle Animation
+        // Particle Animation
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const particlesArray = [];
-        const numberOfParticles = 150;
+        const numberOfParticles = window.innerWidth < 768 ? 80 : 150;
 
         class Particle {
             constructor() {
@@ -306,6 +354,7 @@
         }
 
         function init() {
+            particlesArray.length = 0;
             for (let i = 0; i < numberOfParticles; i++) {
                 particlesArray.push(new Particle());
             }
@@ -330,6 +379,7 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            init();
         });
 
         // Scroll Animations
